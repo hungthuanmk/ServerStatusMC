@@ -46,7 +46,7 @@ def get_embed():
         embed.add_field(name="MOTD Update", value=server_status['motd'].split(" on ")[1], inline="true")
         embed.add_field(name="Version", value=server_status['server']['name'], inline="true")
         embed.add_field(name="Max Player", value=server_status['players']['max'], inline="true")
-        embed.add_field(name="Ping", value=get_today(time()), inline="true")
+        embed.add_field(name="Cache time", value=get_today(server_status['last_updated']), inline="true")
         
         if server_status['players']['now'] > 0:
             embed.add_field(name="Players", value="\n".join(player["name"] for player in server_status['players']['sample']), inline="true")
@@ -56,7 +56,7 @@ def get_embed():
         
         embed.add_field(name="\u200B", value='\u200B')
         
-        embed.set_footer(text="Vào chơi đi check cái éo gì 😏 updated " + get_today(server_status['last_updated']))
+        embed.set_footer(text="Vào chơi đi check cái éo gì 😏 updated " + get_today(time()))
         return embed
     
     # Server is offline
@@ -116,7 +116,7 @@ async def on_message(message):
             embed = get_embed()
             await default_message.edit(embed=embed)
             print('Updated embed')
-            sleep(5)
+            sleep(1)
 
     if message.content.lower().startswith('update'):
         embed = get_embed()

@@ -2,8 +2,6 @@ from datetime import datetime
 from http import server
 import os
 import random
-from timeit import default_timer
-from unittest.mock import DEFAULT
 from dotenv import load_dotenv
 import discord
 from discord.ext import commands

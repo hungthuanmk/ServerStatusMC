@@ -1,1 +1,1 @@
-# ServerStatusMC forked
+# ServerStatusMC

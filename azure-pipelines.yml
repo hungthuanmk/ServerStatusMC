@@ -9,7 +9,8 @@ resources:
 - repo: self
 
 variables:
-  tag: 'hungthuanmk/mcbot:latest'
+  tag: 'latest'
+  imageName: 'hungthuanmk/mcbot'
 
 stages:
 - stage: Build
@@ -25,5 +26,6 @@ stages:
       inputs:
         command: buildAndPush
         dockerfile: '**/Dockerfile'
+        repository: $(imageName)
         tags: |
-          $(tag)
+          $(imageName):$(tag)

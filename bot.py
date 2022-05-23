@@ -56,13 +56,13 @@ def get_embed():
         
         embed.add_field(name="\u200B", value='\u200B')
         
-        embed.set_footer(text="Vào chơi đi check cái éo gì 😏 updated " + get_today(time()))
+        embed.set_footer(text="Vào chơi đi check cái éo gì 😏 updated on " + get_today(time()))
         return embed
     
     # Server is offline
     embed.title = ":red_circle: Server is Offline"
     embed.add_field(name="Waiting for the server to open...", value='\u200B')
-    embed.set_footer(text="Server chưa mở ngồi đợi đi 😏 updated " + get_today(server_status['last_updated']))
+    embed.set_footer(text="Server chưa mở ngồi đợi đi 😏 updated on " + get_today(time()))
     return embed
 
 # Display icon

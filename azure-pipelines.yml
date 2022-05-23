@@ -28,4 +28,4 @@ stages:
         dockerfile: '**/Dockerfile'
         repository: $(imageName)
         tags: |
-          $(imageName):$(tag)
+          $(tag)
